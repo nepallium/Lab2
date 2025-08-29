@@ -41,7 +41,7 @@ public class Main {
         System.out.print("Content points: ");
         double content = input.nextDouble();
         Essay e1 = new Essay();
-        e1.setScore(length, length, length, content);
+        e1.setScore(grammar, spelling, length, content);
         System.out.println(e1.toString());
         
         System.out.println("\nStep 5:");

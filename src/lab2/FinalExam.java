@@ -21,10 +21,17 @@ public class FinalExam extends GradedActivity {
     }
 
     public double getPointsEach() {
-        return this.numQuestions;
+        return this.pointsEach;
     }
 
     public int getNumMissed() {
         return this.numMissed;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("Each question counts %.1f points\n", getPointsEach()) +
+                String.format("The exam score is %.1f\n", super.getScore()) +
+                String.format("The exam grade is %c\n", super.getGrade());
     }
 }

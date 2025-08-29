@@ -9,13 +9,14 @@ package lab2;
  * @author 2476382
  */
 public class Essay extends GradedActivity {
+
     private double grammar;
     private double spelling;
     private double correctLength;
     private double content;
 
     public void setScore(double gr, double sp, double len, double cnt) {
-        super.setScore(30 * gr + 20 * sp + 20 * len + 30 * cnt);
+        super.setScore(gr + sp + len + cnt);
     }
 
     public double getGrammar() {
@@ -48,5 +49,11 @@ public class Essay extends GradedActivity {
 
     public void setContent(double content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Total points: %.1f\n", super.getScore())
+                + String.format("Grade %c\n", super.getGrade());
     }
 }
