@@ -9,6 +9,7 @@ package lab2;
  * @author 2476382
  */
 public class PassFailExam extends PassFailActivity {
+
     private int numQuestions;
     private double pointsEach;
     private int numMissed;
@@ -28,11 +29,11 @@ public class PassFailExam extends PassFailActivity {
     public int getNumMissed() {
         return numMissed;
     }
-    
+
     @Override
     public String toString() {
-        return String.format("Each question counts %.1f points\n", pointsEach) +
-                String.format("The exam score is %.1f\n", super.getScore()) +
-                String.format("The exam grade is %c\n", super.getGrade());
+        return String.format("Each question counts %.1f points\n", pointsEach)
+                + String.format("The exam score is %.1f\n", super.getScore())
+                + String.format("The exam grade is %c", super.getGrade());
     }
 }

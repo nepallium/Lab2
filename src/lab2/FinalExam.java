@@ -9,6 +9,7 @@ package lab2;
  * @author 2476382
  */
 public class FinalExam extends GradedActivity {
+
     private int numQuestions;
     private double pointsEach;
     private int numMissed;
@@ -27,11 +28,11 @@ public class FinalExam extends GradedActivity {
     public int getNumMissed() {
         return this.numMissed;
     }
-    
+
     @Override
     public String toString() {
-        return String.format("Each question counts %.1f points\n", getPointsEach()) +
-                String.format("The exam score is %.1f\n", super.getScore()) +
-                String.format("The exam grade is %c\n", super.getGrade());
+        return String.format("Each question counts %.1f points\n", getPointsEach())
+                + String.format("The exam score is %.1f\n", super.getScore())
+                + String.format("The exam grade is %c", super.getGrade());
     }
 }

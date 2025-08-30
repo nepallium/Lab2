@@ -16,6 +16,23 @@ public class Essay extends GradedActivity {
     private double content;
 
     public void setScore(double gr, double sp, double len, double cnt) {
+        if (gr > 30) {
+            throw new IllegalArgumentException("Grammar is max 30 points");
+        }
+        if (sp > 20) {
+            throw new IllegalArgumentException("Spelling is max 20 points");
+        }
+        if (len > 20) {
+            throw new IllegalArgumentException("Correct length is max 20 points");
+        }
+        if (cnt > 30) {
+            throw new IllegalArgumentException("Content is max 30 points");
+        }
+        this.grammar = gr;
+        this.spelling = sp;
+        this.correctLength = len;
+        this.content = cnt;
+
         super.setScore(gr + sp + len + cnt);
     }
 
@@ -54,6 +71,6 @@ public class Essay extends GradedActivity {
     @Override
     public String toString() {
         return String.format("Total points: %.1f\n", super.getScore())
-                + String.format("Grade %c\n", super.getGrade());
+                + String.format("Grade %c", super.getGrade());
     }
 }

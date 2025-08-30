@@ -9,6 +9,7 @@ package lab2;
  * @author 2476382
  */
 public interface Analyzable {
+
     double getAverage();
 
     GradedActivity getHighest();

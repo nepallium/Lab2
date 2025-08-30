@@ -9,6 +9,7 @@ package lab2;
  * @author 2476382
  */
 public class PassFailActivity extends GradedActivity {
+
     private double minPassingScore;
 
     public PassFailActivity(double minPassingScore) {
