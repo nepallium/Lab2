@@ -22,7 +22,7 @@ public class CourseGrades implements Analyzable {
         double sum = 0;
 
         for (GradedActivity activity : grades) {
-            sum += activity.getGrade();
+            sum += activity.getScore();
         }
 
         return sum / grades.length;
@@ -33,7 +33,7 @@ public class CourseGrades implements Analyzable {
         GradedActivity max = grades[0];
 
         for (GradedActivity activity : grades) {
-            if (activity.getGrade() > max.getGrade()) {
+            if (activity.getScore() > max.getScore()) {
                 max = activity;
             }
         }
@@ -46,7 +46,7 @@ public class CourseGrades implements Analyzable {
         GradedActivity min = grades[0];
 
         for (GradedActivity activity : grades) {
-            if (activity.getGrade() < min.getGrade()) {
+            if (activity.getScore() < min.getScore()) {
                 min = activity;
             }
         }
@@ -72,9 +72,9 @@ public class CourseGrades implements Analyzable {
 
     @Override
     public String toString() {
-        return String.format("Lab Score: %.1f\tGrade: %c\n", grades[0].getScore(), grades[0].getGrade())
+        return String.format("Lab Score: %.1f    Grade: %c\n", grades[0].getScore(), grades[0].getGrade())
                 + String.format("Pass/Fail Exam Score: %.1f\tGrade: %c\n", grades[1].getScore(), grades[1].getGrade())
                 + String.format("Essay Score: %.1f\tGrade: %c\n", grades[2].getScore(), grades[2].getGrade())
-                + String.format("Final Exam Score: %.1f\tGrade: %c\n", grades[2].getScore(), grades[2].getGrade());
+                + String.format("Final Exam Score: %.1f\tGrade: %c", grades[3].getScore(), grades[3].getGrade());
     }
 }
